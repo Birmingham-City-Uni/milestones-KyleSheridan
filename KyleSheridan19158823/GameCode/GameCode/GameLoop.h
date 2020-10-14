@@ -1,6 +1,9 @@
 #pragma once
 
 #include <SDL.h>
+#include <iostream>
+
+#include "Background.h"
 
 class GameLoop {
 public:
@@ -9,7 +12,7 @@ public:
 	//initialisation
 	bool init();
 	//process input
-	void input(SDL_Event);
+	bool input();
 	//update
 	void update();
 	//draw
@@ -18,5 +21,12 @@ public:
 	void clear();
 
 private:
+	SDL_Window* window;
+	SDL_Renderer* renderer;
 
+	SDL_Event e;
+
+	Background* background;
+
+	bool keyDown[512];
 };
