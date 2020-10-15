@@ -9,7 +9,12 @@ GameLoop::GameLoop()
 bool GameLoop::init()
 {
 	if (SDL_Init(SDL_INIT_VIDEO) < 0) {
-		std::cout << "Could not initialise: " << SDL_GetError();
+		std::cout << "Could not initialise SDL: " << SDL_GetError();
+		return false;
+	}
+
+	if (TTF_Init() < 0) {
+		std::cout << "Could not initialise TTF: " << TTF_GetError();
 		return false;
 	}
 
@@ -28,9 +33,20 @@ bool GameLoop::init()
 		std::cout << "Could not create renderer: " << SDL_GetError();
 	}
 
-	//create Background
-	background = new Background(this->renderer);
-	background->init();
+	//create scenes
+	title = new TitleScreen(this->renderer);
+
+	//start on titlescreen
+	currentScene = titleScreen;
+
+	switch (currentScene)
+	{
+	case titleScreen:
+		title->init();
+		break;
+	default:
+		break;
+	}
 
 	return true;
 }
@@ -41,6 +57,15 @@ bool GameLoop::input()
 		if (e.type == SDL_QUIT) {
 			return false;
 		}
+	}
+
+	switch (currentScene)
+	{
+	case titleScreen:
+		title->input();
+		break;
+	default:
+		break;
 	}
 
 	return true;
@@ -55,8 +80,14 @@ void GameLoop::draw()
 {
 	SDL_RenderClear(renderer);
 
-	//process drawing for classes
-	background->draw();
+	switch (currentScene)
+	{
+	case titleScreen:
+		title->draw();
+		break;
+	default:
+		break;
+	}
 
 	SDL_RenderPresent(renderer);
 	SDL_Delay(16);
@@ -64,9 +95,12 @@ void GameLoop::draw()
 
 void GameLoop::clear()
 {
-	background->clear();
-	if (background) {
-		delete background;
-		background = nullptr;;
+	switch (currentScene)
+	{
+	case titleScreen:
+		title->clear();
+		break;
+	default:
+		break;
 	}
 }

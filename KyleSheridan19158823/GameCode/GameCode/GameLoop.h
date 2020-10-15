@@ -1,9 +1,8 @@
 #pragma once
 
-#include <SDL.h>
 #include <iostream>
 
-#include "Background.h"
+#include "TitleScreen.h"
 
 class GameLoop {
 public:
@@ -26,7 +25,11 @@ private:
 
 	SDL_Event e;
 
-	Background* background;
+	TitleScreen* title;
+
+	enum scene { titleScreen };
+
+	scene currentScene;
 
 	bool keyDown[512];
 };
