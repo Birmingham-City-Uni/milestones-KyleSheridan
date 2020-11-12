@@ -35,14 +35,21 @@ bool GameLoop::init()
 
 	//create scenes
 	title = new TitleScreen(this->renderer);
+	test = new TestScene(this->renderer);
 
 	//start on titlescreen
-	currentScene = titleScreen;
+	//-----------------
+	//CHANGE THIS
+	currentScene = Scene::testScene;
+	//-----------------
 
 	switch (currentScene)
 	{
-	case titleScreen:
+	case Scene::titleScreen:
 		title->init();
+		break;
+	case Scene::testScene:
+		test->init();
 		break;
 	default:
 		break;
@@ -61,8 +68,11 @@ bool GameLoop::input()
 
 	switch (currentScene)
 	{
-	case titleScreen:
+	case Scene::titleScreen:
 		title->input();
+		break;
+	case Scene::testScene:
+		test->input();
 		break;
 	default:
 		break;
@@ -82,8 +92,11 @@ void GameLoop::draw()
 
 	switch (currentScene)
 	{
-	case titleScreen:
+	case Scene::titleScreen:
 		title->draw();
+		break;
+	case Scene::testScene:
+		test->draw();
 		break;
 	default:
 		break;
@@ -97,8 +110,11 @@ void GameLoop::clear()
 {
 	switch (currentScene)
 	{
-	case titleScreen:
+	case Scene::titleScreen:
 		title->clear();
+		break;
+	case Scene::testScene:
+		test->clear();
 		break;
 	default:
 		break;

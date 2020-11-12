@@ -3,6 +3,7 @@
 #include <iostream>
 
 #include "TitleScreen.h"
+#include "TestScene.h"
 
 class GameLoop {
 public:
@@ -26,10 +27,11 @@ private:
 	SDL_Event e;
 
 	TitleScreen* title;
+	TestScene* test;
 
-	enum scene { titleScreen };
+	enum class Scene { titleScreen, testScene };
 
-	scene currentScene;
+	Scene currentScene;
 
 	bool keyDown[512];
 };

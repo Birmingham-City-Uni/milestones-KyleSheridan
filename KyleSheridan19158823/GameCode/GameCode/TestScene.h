@@ -1,0 +1,21 @@
+#pragma once
+#include "Background.h"
+#include "UI.h"
+#include "TileMap.h"
+
+class TestScene {
+public:
+	TestScene(SDL_Renderer*);
+	void init();
+	void input();
+	void update();
+	void draw();
+	void clear();
+
+private:
+	SDL_Renderer* renderer;
+
+	Background* background;
+
+	TileMap* tileMap;
+};

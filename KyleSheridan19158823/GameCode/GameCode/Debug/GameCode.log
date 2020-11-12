@@ -1,4 +1,12 @@
-﻿  TitleScreen.cpp
+﻿  GameLoop.cpp
 D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(9): warning C4091: 'static ': ignored on left of 'Text::alignX' when no variable is declared
 D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(10): warning C4091: 'static ': ignored on left of 'Text::alignY' when no variable is declared
+  Main.cpp
+D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(9): warning C4091: 'static ': ignored on left of 'Text::alignX' when no variable is declared
+D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(10): warning C4091: 'static ': ignored on left of 'Text::alignY' when no variable is declared
+  TestScene.cpp
+D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(9): warning C4091: 'static ': ignored on left of 'Text::alignX' when no variable is declared
+D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(10): warning C4091: 'static ': ignored on left of 'Text::alignY' when no variable is declared
+  TileMap.cpp
+  Generating Code...
   GameCode.vcxproj -> D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\Debug\GameCode.exe
