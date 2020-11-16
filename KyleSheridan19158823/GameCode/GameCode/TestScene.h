@@ -15,6 +15,8 @@ public:
 private:
 	SDL_Renderer* renderer;
 
+	SDL_Texture* t; //<--- move to player class
+
 	Background* background;
 
 	TileMap* tileMap;

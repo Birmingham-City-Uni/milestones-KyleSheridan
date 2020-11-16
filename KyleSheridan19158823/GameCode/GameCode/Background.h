@@ -16,8 +16,8 @@ public:
 	void clear();
 
 private:
-	SDL_Texture* texture; //this is the players sprite
-	SDL_Renderer* renderer; //allows rendering from this class
+	SDL_Texture* texture;
+	SDL_Renderer* renderer;
 
 	SDL_Rect position;
 };

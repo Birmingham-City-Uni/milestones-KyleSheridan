@@ -2,7 +2,7 @@
 
 void TileMap::init() 
 {
-	SDL_Surface* s = IMG_Load("../Assets/Tilemap.png");
+	SDL_Surface* s = IMG_Load("assets/Tilemap.png");
 	this->mapTileset = SDL_CreateTextureFromSurface(this->renderer, s);
 	SDL_FreeSurface(s);
 }
