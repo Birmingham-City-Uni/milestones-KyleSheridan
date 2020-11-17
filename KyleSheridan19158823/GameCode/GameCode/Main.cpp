@@ -1,5 +1,7 @@
 #include "GameLoop.h"
 
+#undef main
+
 GameLoop* gameLoop;
 
 int main(int argc, char* args[]) {
@@ -16,5 +18,6 @@ int main(int argc, char* args[]) {
 
 	gameLoop->clear();
 
+	delete gameLoop;
 	return 0;
 }

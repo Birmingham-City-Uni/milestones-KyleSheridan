@@ -60,30 +60,26 @@ bool GameLoop::init()
 
 bool GameLoop::input()
 {
-	while (SDL_PollEvent(&e)) {
-		if (e.type == SDL_QUIT) {
-			return false;
-		}
-	}
+	bool running;
 
 	switch (currentScene)
 	{
 	case Scene::titleScreen:
-		title->input();
+		title->input(); //<-----make bool and sort inheritance 
 		break;
 	case Scene::testScene:
-		test->input();
+		running = test->input();
 		break;
 	default:
 		break;
 	}
 
-	return true;
+	return running;
 }
 
 void GameLoop::update()
 {
-
+	test->update();
 }
 
 void GameLoop::draw()

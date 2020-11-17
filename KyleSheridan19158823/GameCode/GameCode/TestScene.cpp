@@ -1,10 +1,5 @@
 #include "TestScene.h"
 
-TestScene::TestScene(SDL_Renderer* renderer)
-{
-	this->renderer = renderer;
-}
-
 void TestScene::init()
 {
 	//create Background
@@ -15,34 +10,22 @@ void TestScene::init()
 	tileMap = new TileMap(this->renderer);
 	tileMap->init();
 
-
-	//Move to Player class -----------
-	SDL_Surface* s = IMG_Load("assets/Player.png");
-	t = SDL_CreateTextureFromSurface(this->renderer, s);
-	SDL_FreeSurface(s);
-	//------------------------------
-}
-
-void TestScene::input()
-{
-
+	
+	//create Player
+	player = new Player(this->renderer);
+	player->init();
 }
 
 void TestScene::update()
 {
-
+	player->update(keyDown);
 }
 
 void TestScene::draw()
 {
 	background->draw();
 	tileMap->draw();
-
-	//Move to Player class -----------
-	SDL_Rect rect = { 64, 64, 64, 64 };
-
-	SDL_RenderCopy(this->renderer, this->t, 0, &rect);
-	//------------------------------
+	player->draw();
 }
 
 void TestScene::clear()
@@ -58,4 +41,10 @@ void TestScene::clear()
 		delete tileMap;
 		tileMap = nullptr;
 	}
+	/*
+	player->clear();
+	if (player) {
+		delete player;
+		player = nullptr;
+	}*/
 }

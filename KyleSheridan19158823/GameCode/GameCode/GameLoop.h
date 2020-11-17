@@ -20,6 +20,13 @@ public:
 	//clear
 	void clear();
 
+	bool getKeyDown(int keycode) {
+		if (keycode > 0 && keycode < 512) {
+			return keyDown[keycode];
+		}
+		return false;
+	}
+
 private:
 	SDL_Window* window;
 	SDL_Renderer* renderer;

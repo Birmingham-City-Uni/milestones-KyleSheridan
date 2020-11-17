@@ -1,23 +1,20 @@
 #pragma once
+#include "Scene.h"
 #include "Background.h"
 #include "UI.h"
 #include "TileMap.h"
+#include "Player.h"
 
-class TestScene {
+class TestScene : public Scene {
 public:
-	TestScene(SDL_Renderer*);
+	TestScene(SDL_Renderer* renderer) : Scene(renderer) {};
 	void init();
-	void input();
 	void update();
 	void draw();
 	void clear();
 
 private:
-	SDL_Renderer* renderer;
-
-	SDL_Texture* t; //<--- move to player class
-
-	Background* background;
-
 	TileMap* tileMap;
+
+	Player* player;
 };
