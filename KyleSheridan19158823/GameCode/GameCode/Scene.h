@@ -7,7 +7,7 @@ public:
 	Scene(SDL_Renderer* renderer) : renderer(renderer) {}
 
 	virtual void init() = 0;
-	bool input();
+	virtual bool input() = 0;
 	virtual void update() = 0;
 	virtual void draw() = 0;
 	virtual void clear() = 0;

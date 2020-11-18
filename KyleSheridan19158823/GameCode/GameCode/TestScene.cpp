@@ -14,17 +14,47 @@ void TestScene::init()
 	//create Player
 	player = new Player(this->renderer);
 	player->init();
+
+	//create BulletManager
+	bm = new BulletManager(this->renderer, this->player);
+	bm->init();
+}
+
+bool TestScene::input()
+{
+	while (SDL_PollEvent(&e)) {
+		if (e.type == SDL_QUIT) {
+			return false;
+		}
+		if (e.type == SDL_KEYDOWN) {
+			if (e.key.keysym.scancode < 512) {
+				keyDown[e.key.keysym.scancode] = true;
+			}
+		}
+		else if (e.type == SDL_KEYUP) {
+			if (e.key.keysym.scancode) {
+				keyDown[e.key.keysym.scancode] = false;
+			}
+		}
+	}
+
+	player->input(keyDown);
+	bm->input(keyDown);
+
+	return true;
 }
 
 void TestScene::update()
 {
-	player->update(keyDown);
+	player->update();
+	bm->update();
 }
 
 void TestScene::draw()
 {
 	background->draw();
 	tileMap->draw();
+	bm->draw();
 	player->draw();
 }
 
@@ -41,10 +71,16 @@ void TestScene::clear()
 		delete tileMap;
 		tileMap = nullptr;
 	}
-	/*
+	
 	player->clear();
 	if (player) {
 		delete player;
 		player = nullptr;
-	}*/
+	}
+
+	bm->clear();
+	if (bm) {
+		delete bm;
+		bm = nullptr;
+	}
 }

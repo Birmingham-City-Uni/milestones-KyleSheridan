@@ -152,6 +152,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Background.cpp" />
+    <ClCompile Include="BulletManager.cpp" />
     <ClCompile Include="GameLoop.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -163,6 +164,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Background.h" />
+    <ClInclude Include="BulletManager.h" />
     <ClInclude Include="GameLoop.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Scene.h" />

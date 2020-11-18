@@ -9,30 +9,47 @@ void Player::init()
 	position = { 64, 64, 64, 64 };
 }
 
-void Player::input()
+void Player::input(bool* keyDown)
 {
+	v = { 0,0 };
 
-}
+	if (keyDown[SDL_SCANCODE_D]) {
+		v.x = moveSpeed;
+	}
+	if (keyDown[SDL_SCANCODE_A]) {
+		v.x = -moveSpeed;
+	}
+	if (keyDown[SDL_SCANCODE_W]) {
+		v.y = -moveSpeed;
+	}
+	if (keyDown[SDL_SCANCODE_S]) {
+		v.y = moveSpeed;
+	}
 
-void Player::update(bool keyDown[512])
-{
 	if (keyDown[SDL_SCANCODE_RIGHT]) {
-		position.x += moveSpeed;
+		rotation = 90;
 	}
 	if (keyDown[SDL_SCANCODE_LEFT]) {
-		position.x -= moveSpeed;
+		rotation = -90;
 	}
 	if (keyDown[SDL_SCANCODE_UP]) {
-		position.y -= moveSpeed;
+		rotation = 0;
 	}
 	if (keyDown[SDL_SCANCODE_DOWN]) {
-		position.y += moveSpeed;
+		rotation = 180;
 	}
+}
+
+void Player::update()
+{
+	position.x += v.x;
+	position.y += v.y;
 }
 
 void Player::draw()
 {
-	SDL_RenderCopy(this->renderer, this->texture, 0, &this->position);
+	SDL_Point center = { 32,32 };
+	SDL_RenderCopyEx(this->renderer, this->texture, 0, &this->position, this->rotation, &center, SDL_FLIP_NONE);
 }
 
 void Player::clear()
