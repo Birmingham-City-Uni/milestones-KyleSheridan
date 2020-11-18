@@ -48,8 +48,8 @@ void Player::update()
 
 void Player::draw()
 {
-	SDL_Point center = { 32,32 };
-	SDL_RenderCopyEx(this->renderer, this->texture, 0, &this->position, this->rotation, &center, SDL_FLIP_NONE);
+	//SDL_Point center = { 32,32 };
+	SDL_RenderCopyEx(this->renderer, this->texture, 0, &this->position, this->rotation, NULL, SDL_FLIP_NONE);
 }
 
 void Player::clear()

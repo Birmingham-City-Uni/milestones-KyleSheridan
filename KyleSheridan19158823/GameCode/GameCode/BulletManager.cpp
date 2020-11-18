@@ -35,25 +35,30 @@ void BulletManager::input(bool* keyDown)
 	}
 }
 
-void BulletManager::update()
+void BulletManager::update(Enemy* enemy) //Change parameter to array or vector
 {
-	for (auto& b : bullets) {
-		if (b.rotation == 90) {
-			b.x += BULLET_VELOCITY;
+	for (int i = 0; i < bullets.size(); i++) {
+		if (bullets[i].rotation == 90) {
+			bullets[i].x += BULLET_VELOCITY;
 		}
-		if (b.rotation == -90) {
-			b.x -= BULLET_VELOCITY;
+		if (bullets[i].rotation == -90) {
+			bullets[i].x -= BULLET_VELOCITY;
 		}
-		if (b.rotation == 0) {
-			b.y -= BULLET_VELOCITY;
+		if (bullets[i].rotation == 0) {
+			bullets[i].y -= BULLET_VELOCITY;
 		}
-		if (b.rotation == 180) {
-			b.y += BULLET_VELOCITY;
+		if (bullets[i].rotation == 180) {
+			bullets[i].y += BULLET_VELOCITY;
 		}
-		b.distance += BULLET_VELOCITY;
+		bullets[i].distance += BULLET_VELOCITY;
+
+		if (isColliding(bullets[i], enemy)) {
+			bullets.erase(bullets.begin() + i);
+			sm->increaseScore(10);
+		}
 	}
 
-	auto remove = std::remove_if(bullets.begin(), bullets.end(), [](const Bullet& b) { return b.distance > 500; });
+	auto remove = remove_if(bullets.begin(), bullets.end(), [](const Bullet& b) { return b.distance > 500; });
 	bullets.erase(remove, bullets.end());
 }
 
@@ -62,11 +67,18 @@ void BulletManager::draw()
 	SDL_Point center = { 10, 10 };
 	for (auto& b : bullets) {
 		SDL_Rect dest = { b.x, b.y, 20, 20 };
-		SDL_RenderCopyEx(renderer, bulletTexture, 0, &dest, b.rotation, &center, SDL_FLIP_NONE);
+		SDL_RenderCopyEx(this->renderer, this->bulletTexture, 0, &dest, b.rotation, &center, SDL_FLIP_NONE);
 	}
 }
 
 void BulletManager::clear() 
 {
 	SDL_DestroyTexture(bulletTexture);
+}
+
+bool BulletManager::isColliding(Bullet bul, Enemy* enemy)
+{
+	SDL_Rect bulletRect = { bul.x, bul.y, 20, 20 };
+	SDL_Rect nullRect;
+	return SDL_IntersectRect(&bulletRect, &enemy->hitbox, &nullRect);
 }

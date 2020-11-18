@@ -5,6 +5,8 @@
 #include "TileMap.h"
 #include "Player.h"
 #include "BulletManager.h"
+#include "Enemy.h"
+#include "ScoreManager.h"
 
 class TestScene : public Scene {
 public:
@@ -17,8 +19,8 @@ public:
 
 private:
 	TileMap* tileMap;
-
 	Player* player;
-
 	BulletManager* bm;
+	Enemy* enemy;
+	ScoreManager* scoreManager;
 };

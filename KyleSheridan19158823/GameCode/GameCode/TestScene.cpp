@@ -15,8 +15,16 @@ void TestScene::init()
 	player = new Player(this->renderer);
 	player->init();
 
+	//create Enemy
+	enemy = new Enemy(this->renderer);
+	enemy->init();
+
+	//create ScoreManager
+	scoreManager = new ScoreManager(this->renderer);
+	scoreManager->init();
+	
 	//create BulletManager
-	bm = new BulletManager(this->renderer, this->player);
+	bm = new BulletManager(this->renderer, this->player, this->scoreManager);
 	bm->init();
 }
 
@@ -47,15 +55,19 @@ bool TestScene::input()
 void TestScene::update()
 {
 	player->update();
-	bm->update();
+	enemy->update();
+	bm->update(enemy);
+	scoreManager->update();
 }
 
 void TestScene::draw()
 {
 	background->draw();
 	tileMap->draw();
+	enemy->draw();
 	bm->draw();
 	player->draw();
+	scoreManager->draw();
 }
 
 void TestScene::clear()
@@ -82,5 +94,17 @@ void TestScene::clear()
 	if (bm) {
 		delete bm;
 		bm = nullptr;
+	}
+
+	enemy->clear();
+	if (enemy) {
+		delete enemy;
+		enemy = nullptr;
+	}
+
+	scoreManager->clear();
+	if (scoreManager) {
+		delete scoreManager;
+		scoreManager = nullptr;
 	}
 }

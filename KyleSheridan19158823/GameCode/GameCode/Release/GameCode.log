@@ -1,1 +1,35 @@
-﻿
+﻿  Background.cpp
+  BulletManager.cpp
+D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\BulletManager.cpp(13,33): warning C4018: '>': signed/unsigned mismatch
+D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\BulletManager.cpp(19,33): warning C4018: '>': signed/unsigned mismatch
+D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\BulletManager.cpp(25,33): warning C4018: '>': signed/unsigned mismatch
+D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\BulletManager.cpp(31,33): warning C4018: '>': signed/unsigned mismatch
+D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\BulletManager.cpp(57,20): warning C4018: '<': signed/unsigned mismatch
+  Enemy.cpp
+D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Enemy.cpp(17,30): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Enemy.cpp(18,30): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  GameLoop.cpp
+D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(9): warning C4091: 'static ': ignored on left of 'Text::alignX' when no variable is declared
+D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(10): warning C4091: 'static ': ignored on left of 'Text::alignY' when no variable is declared
+  Main.cpp
+D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(9): warning C4091: 'static ': ignored on left of 'Text::alignX' when no variable is declared
+D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(10): warning C4091: 'static ': ignored on left of 'Text::alignY' when no variable is declared
+  Player.cpp
+  Scene.cpp
+D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(9): warning C4091: 'static ': ignored on left of 'Text::alignX' when no variable is declared
+D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(10): warning C4091: 'static ': ignored on left of 'Text::alignY' when no variable is declared
+  TestScene.cpp
+D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(9): warning C4091: 'static ': ignored on left of 'Text::alignX' when no variable is declared
+D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(10): warning C4091: 'static ': ignored on left of 'Text::alignY' when no variable is declared
+  TileMap.cpp
+  TitleScreen.cpp
+D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(9): warning C4091: 'static ': ignored on left of 'Text::alignX' when no variable is declared
+D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(10): warning C4091: 'static ': ignored on left of 'Text::alignY' when no variable is declared
+  UI.cpp
+D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(9): warning C4091: 'static ': ignored on left of 'Text::alignX' when no variable is declared
+D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(10): warning C4091: 'static ': ignored on left of 'Text::alignY' when no variable is declared
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 163 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  GameCode.vcxproj -> D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\Release\GameCode.exe
