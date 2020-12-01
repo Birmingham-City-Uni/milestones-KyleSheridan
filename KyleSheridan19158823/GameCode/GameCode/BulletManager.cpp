@@ -55,6 +55,7 @@ void BulletManager::update(Enemy* enemy) //Change parameter to array or vector
 		if (isColliding(bullets[i], enemy)) {
 			bullets.erase(bullets.begin() + i);
 			sm->increaseScore(10);
+			enemy->takeDamage(10);
 		}
 	}
 

@@ -1,6 +1,8 @@
 #pragma once
 #include <SDL.h>
 #include <SDL_image.h>
+#include <iostream>
+#include <math.h>
 
 class Enemy {
 public:
@@ -9,6 +11,14 @@ public:
 	void update();
 	void draw();
 	void clear();
+
+	void takeDamage(int amount) {
+		health -= amount;
+	}
+
+	int getHealth() {
+		return health;
+	}
 
 private:
 
@@ -22,4 +32,15 @@ private:
 	SDL_Rect position;
 
 	float rotation;
+
+	int maxHealth = 50;
+
+	int health;
+
+
+	//health bar
+	SDL_Texture* healthBarTextureGrey;
+	SDL_Texture* healthBarTextureRed;
+	SDL_Rect healthBarRect;
+	SDL_Rect healthBarAmountRect;
 };
