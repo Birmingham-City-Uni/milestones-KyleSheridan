@@ -27,6 +27,6 @@ private:
 
 	Velocity v;
 
-	int moveSpeed = 3;
+	int moveSpeed = 5;
 	int rotation = 0;
 };

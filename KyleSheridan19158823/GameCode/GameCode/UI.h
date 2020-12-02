@@ -3,6 +3,7 @@
 #include <SDL_image.h>
 #include <SDL_ttf.h>
 #include <iostream>
+#include <cmath>
 
 class Text {
 public:
@@ -24,4 +25,32 @@ private:
 	SDL_Texture* texture;
 	SDL_Rect textRect;
 	SDL_Color color = { 0, 0, 0 };
+};
+
+class HealthBar {
+public:
+	HealthBar(SDL_Renderer* renderer, int x, int y, int w = 64, int h = 20);
+	void init();
+	void update(int, int, float);
+	void draw();
+	void clear();
+
+	int lerp(int a, int b, float t = 0.5);
+
+	void resetCounter() {
+		counter = 20;
+	}
+
+private:
+	SDL_Renderer* renderer;
+	
+	SDL_Texture* healthBarTextureGrey;
+	SDL_Texture* healthBarTextureRed;
+	SDL_Texture* healthBarTextureWhite;
+
+	SDL_Rect healthBarRectGrey;
+	SDL_Rect healthBarRectRed;
+	SDL_Rect healthBarRectWhite;
+
+	int counter = 20;
 };

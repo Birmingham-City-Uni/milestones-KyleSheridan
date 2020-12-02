@@ -14,6 +14,8 @@ int main(int argc, char* args[]) {
 	while (gameLoop->input()) {
 		gameLoop->update();
 		gameLoop->draw();
+
+		SDL_Delay(16);
 	}
 
 	gameLoop->clear();

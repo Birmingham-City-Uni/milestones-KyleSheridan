@@ -1,13 +1,6 @@
-﻿  BulletManager.cpp
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(9): warning C4091: 'static ': ignored on left of 'Text::alignX' when no variable is declared
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(10): warning C4091: 'static ': ignored on left of 'Text::alignY' when no variable is declared
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\BulletManager.cpp(13,33): warning C4018: '>': signed/unsigned mismatch
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\BulletManager.cpp(19,33): warning C4018: '>': signed/unsigned mismatch
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\BulletManager.cpp(25,33): warning C4018: '>': signed/unsigned mismatch
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\BulletManager.cpp(31,33): warning C4018: '>': signed/unsigned mismatch
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\BulletManager.cpp(40,20): warning C4018: '<': signed/unsigned mismatch
-  Enemy.cpp
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Enemy.cpp(32,30): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Enemy.cpp(33,30): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-  Generating Code...
+﻿  UI.cpp
+D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(10): warning C4091: 'static ': ignored on left of 'Text::alignX' when no variable is declared
+D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(11): warning C4091: 'static ': ignored on left of 'Text::alignY' when no variable is declared
+D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.cpp(181,94): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.cpp(202,11): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
   GameCode.vcxproj -> D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\Debug\GameCode.exe

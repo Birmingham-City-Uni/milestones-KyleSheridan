@@ -125,3 +125,79 @@ void Text::draw(const char* text, alignX x, alignY y)
 
 	SDL_DestroyTexture(texture);
 }
+
+HealthBar::HealthBar(SDL_Renderer* renderer, int x, int y, int w, int h) : renderer(renderer) 
+{
+	healthBarRectGrey = { x, y, w, h };
+}
+
+void HealthBar::init() 
+{
+	//health bar
+	SDL_Surface* healthBarSurface = IMG_Load("assets/HealthBarGrey.png");
+	healthBarTextureGrey = SDL_CreateTextureFromSurface(renderer, healthBarSurface);
+	SDL_FreeSurface(healthBarSurface);
+
+	SDL_Surface* healthBarSurface2 = IMG_Load("assets/HealthBarWhite.png");
+	healthBarTextureWhite = SDL_CreateTextureFromSurface(renderer, healthBarSurface2);
+	SDL_FreeSurface(healthBarSurface2);
+
+	SDL_Surface* healthBarSurface3 = IMG_Load("assets/HealthBarRed.png");
+	healthBarTextureRed = SDL_CreateTextureFromSurface(renderer, healthBarSurface3);
+	SDL_FreeSurface(healthBarSurface3);
+
+	this->healthBarRectWhite = {
+		healthBarRectGrey.x + 1,
+		healthBarRectGrey.y + 2,
+		healthBarRectGrey.w - 2,
+		healthBarRectGrey.h - 4
+	};
+
+	this->healthBarRectRed = {
+		healthBarRectGrey.x + 1,
+		healthBarRectGrey.y + 2,
+		healthBarRectGrey.w - 2,
+		healthBarRectGrey.h - 4
+	};
+}
+
+void HealthBar::update(int x, int y, float amount)
+{
+	this->healthBarRectGrey.x = x;
+	this->healthBarRectGrey.y = y;
+
+	this->healthBarRectWhite.x = x + 1;
+	this->healthBarRectWhite.y = y + 2;
+
+	this->healthBarRectRed.x = x + 1;
+	this->healthBarRectRed.y = y + 2;
+
+	this->healthBarRectRed.w = static_cast<int>(std::floor(this->healthBarRectGrey.w - 2) * amount);
+
+	if (counter > 0) {
+		counter--;
+	}
+	else {
+		this->healthBarRectWhite.w = lerp(this->healthBarRectWhite.w, this->healthBarRectRed.w, 0.7);
+	}
+
+}
+
+void HealthBar::draw()
+{
+	SDL_RenderCopyEx(this->renderer, this->healthBarTextureGrey, NULL, &healthBarRectGrey, NULL, NULL, SDL_FLIP_NONE);
+	SDL_RenderCopyEx(this->renderer, this->healthBarTextureWhite, NULL, &healthBarRectWhite, NULL, NULL, SDL_FLIP_NONE);
+	SDL_RenderCopyEx(this->renderer, this->healthBarTextureRed, NULL, &healthBarRectRed, NULL, NULL, SDL_FLIP_NONE);
+	std::cout << healthBarRectRed.x << "\n";
+	std::cout << healthBarRectGrey.x << "\n";
+}
+
+void HealthBar::clear()
+{
+
+}
+
+int HealthBar::lerp(int a, int b, float t)
+{
+	return a + t * (b - a);
+}

@@ -4,6 +4,8 @@
 #include <iostream>
 #include <math.h>
 
+#include "UI.h"
+
 class Enemy {
 public:
 	Enemy(SDL_Renderer* renderer) : renderer(renderer) {}
@@ -14,6 +16,7 @@ public:
 
 	void takeDamage(int amount) {
 		health -= amount;
+		healthBar->resetCounter();
 	}
 
 	int getHealth() {
@@ -31,16 +34,11 @@ private:
 
 	SDL_Rect position;
 
+	HealthBar* healthBar;
+
 	float rotation;
 
 	int maxHealth = 50;
 
 	int health;
-
-
-	//health bar
-	SDL_Texture* healthBarTextureGrey;
-	SDL_Texture* healthBarTextureRed;
-	SDL_Rect healthBarRect;
-	SDL_Rect healthBarAmountRect;
 };
