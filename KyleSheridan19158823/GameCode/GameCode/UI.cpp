@@ -188,8 +188,6 @@ void HealthBar::draw()
 	SDL_RenderCopyEx(this->renderer, this->healthBarTextureGrey, NULL, &healthBarRectGrey, NULL, NULL, SDL_FLIP_NONE);
 	SDL_RenderCopyEx(this->renderer, this->healthBarTextureWhite, NULL, &healthBarRectWhite, NULL, NULL, SDL_FLIP_NONE);
 	SDL_RenderCopyEx(this->renderer, this->healthBarTextureRed, NULL, &healthBarRectRed, NULL, NULL, SDL_FLIP_NONE);
-	std::cout << healthBarRectRed.x << "\n";
-	std::cout << healthBarRectGrey.x << "\n";
 }
 
 void HealthBar::clear()

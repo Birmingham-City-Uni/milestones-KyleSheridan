@@ -10,9 +10,8 @@ void TestScene::init()
 	tileMap = new TileMap(this->renderer);
 	tileMap->init();
 
-	
 	//create Player
-	player = new Player(this->renderer);
+	player = new Player(this->renderer, fps);
 	player->init();
 
 	//create Enemy

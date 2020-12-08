@@ -33,9 +33,12 @@ bool GameLoop::init()
 		std::cout << "Could not create renderer: " << SDL_GetError();
 	}
 
+	fps = new FPS();
+	fps->init();
+
 	//create scenes
 	title = new TitleScreen(this->renderer);
-	test = new TestScene(this->renderer);
+	test = new TestScene(this->renderer, fps);
 
 	//start on titlescreen
 	//-----------------
@@ -54,6 +57,7 @@ bool GameLoop::init()
 	default:
 		break;
 	}
+
 
 	return true;
 }
@@ -79,6 +83,13 @@ bool GameLoop::input()
 
 void GameLoop::update()
 {
+	fps->update();
+
+	/*
+	char buf[100];
+	snprintf(buf, 100, "Game Test - (fps: %u)", fps->getFPS());
+	SDL_SetWindowTitle(window, buf);
+	*/
 	test->update();
 }
 
@@ -99,7 +110,6 @@ void GameLoop::draw()
 	}
 
 	SDL_RenderPresent(renderer);
-	SDL_Delay(16);
 }
 
 void GameLoop::clear()
@@ -114,5 +124,11 @@ void GameLoop::clear()
 		break;
 	default:
 		break;
+	}
+
+	fps->clear();
+	if (fps) {
+		delete fps;
+		fps = nullptr;
 	}
 }

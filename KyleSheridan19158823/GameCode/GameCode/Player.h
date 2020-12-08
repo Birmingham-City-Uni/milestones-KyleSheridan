@@ -3,9 +3,11 @@
 #include <SDL_image.h>
 #include <iostream>
 
+#include "FPS.h"
+
 class Player {
 public:
-	Player(SDL_Renderer* renderer) : renderer(renderer) {}
+	Player(SDL_Renderer* renderer, FPS* fps) : renderer(renderer), fps(fps) {}
 
 	void init();
 	void input(bool* keyDown);
@@ -23,10 +25,12 @@ private:
 
 	SDL_Rect position;
 
+	FPS* fps;
+
 	struct Velocity { int x, y; };
 
 	Velocity v;
 
-	int moveSpeed = 5;
+	int moveSpeed = 3;
 	int rotation = 0;
 };

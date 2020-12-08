@@ -10,7 +10,7 @@
 
 class TestScene : public Scene {
 public:
-	TestScene(SDL_Renderer* renderer) : Scene(renderer) {};
+	TestScene(SDL_Renderer* renderer, FPS* fps) : Scene(renderer, fps) {};
 	void init();
 	bool input();
 	void update();

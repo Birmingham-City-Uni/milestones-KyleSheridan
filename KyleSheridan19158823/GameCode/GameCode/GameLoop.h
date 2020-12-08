@@ -4,6 +4,7 @@
 
 #include "TitleScreen.h"
 #include "TestScene.h"
+#include "FPS.h"
 
 class GameLoop {
 public:
@@ -35,6 +36,8 @@ private:
 
 	TitleScreen* title;
 	TestScene* test;
+
+	FPS* fps;
 
 	enum class Scene { titleScreen, testScene };
 
