@@ -28,3 +28,7 @@ The game will end when the player dies, with the current wave being the players 
 - SDL2_image-2.0.5
 - SDL2_ttf-2.0.15
 - SDL2_mixer-2.0.4
+
+#### Optimization:
+uncapped frame rate = 1400 - 1600
+memory usage = 35 - 40 MB
