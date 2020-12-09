@@ -42,8 +42,8 @@ void Player::input(bool* keyDown)
 
 void Player::update()
 {
-	position.x += v.x * fps->getDeltaTime();
-	position.y += v.y * fps->getDeltaTime();
+	position.x += v.x;
+	position.y += v.y;
 }
 
 void Player::draw()
