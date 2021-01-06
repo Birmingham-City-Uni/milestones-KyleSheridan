@@ -6,6 +6,8 @@
 
 #include "UI.h"
 
+#define ANIM_WAIT 300
+
 class Enemy {
 public:
 	Enemy(SDL_Renderer* renderer) : renderer(renderer) {}
@@ -31,6 +33,7 @@ public:
 private:
 	SDL_Renderer* renderer;
 	SDL_Texture* texture;
+	SDL_Texture* texture2;
 
 	SDL_Rect position;
 
@@ -41,4 +44,7 @@ private:
 	int maxHealth = 50;
 
 	int health;
+
+	bool anim = true;
+	unsigned int lastAnimFrame = 0;
 };

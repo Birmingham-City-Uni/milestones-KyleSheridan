@@ -6,6 +6,10 @@ void Enemy::init()
 	texture = SDL_CreateTextureFromSurface(renderer, s);
 	SDL_FreeSurface(s);
 
+	s = IMG_Load("assets/Alien1_animation.png");
+	texture2 = SDL_CreateTextureFromSurface(renderer, s);
+	SDL_FreeSurface(s);
+
 	this->position = { 576, 256, 64, 64 };
 	this->rotation = 0;
 
@@ -25,11 +29,21 @@ void Enemy::update()
 	this->hitbox.y = position.y + 0.5 * (position.h - hitbox.h);
 
 	healthBar->update(position.x, position.y, (static_cast<float> (health) / maxHealth));
+
+	if (anim && SDL_GetTicks() - lastAnimFrame > ANIM_WAIT) {
+		anim = false;
+		lastAnimFrame = SDL_GetTicks();
+	}
+	else if(!anim && SDL_GetTicks() - lastAnimFrame > ANIM_WAIT){
+		anim = true;
+		lastAnimFrame = SDL_GetTicks();
+	}
 }
 
 void Enemy::draw()
 {
-	SDL_RenderCopyEx(this->renderer, this->texture, 0, &this->position, this->rotation, NULL, SDL_FLIP_NONE);
+	anim ? SDL_RenderCopyEx(this->renderer, this->texture, 0, &this->position, this->rotation, NULL, SDL_FLIP_NONE) 
+		: SDL_RenderCopyEx(this->renderer, this->texture2, 0, &this->position, this->rotation, NULL, SDL_FLIP_NONE);
 
 	healthBar->draw();
 }

@@ -1,14 +1,12 @@
-﻿  BulletManager.cpp
+﻿  GameLoop.cpp
 D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(10): warning C4091: 'static ': ignored on left of 'Text::alignX' when no variable is declared
 D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(11): warning C4091: 'static ': ignored on left of 'Text::alignY' when no variable is declared
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\BulletManager.cpp(18,33): warning C4018: '>': signed/unsigned mismatch
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\BulletManager.cpp(19,22): warning C4018: '<': signed/unsigned mismatch
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\BulletManager.cpp(29,33): warning C4018: '>': signed/unsigned mismatch
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\BulletManager.cpp(30,22): warning C4018: '<': signed/unsigned mismatch
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\BulletManager.cpp(40,33): warning C4018: '>': signed/unsigned mismatch
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\BulletManager.cpp(41,22): warning C4018: '<': signed/unsigned mismatch
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\BulletManager.cpp(51,33): warning C4018: '>': signed/unsigned mismatch
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\BulletManager.cpp(52,22): warning C4018: '<': signed/unsigned mismatch
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\BulletManager.cpp(65,20): warning C4018: '<': signed/unsigned mismatch
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\BulletManager.cpp(97,20): warning C4018: '<': signed/unsigned mismatch
+  Main.cpp
+D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(10): warning C4091: 'static ': ignored on left of 'Text::alignX' when no variable is declared
+D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(11): warning C4091: 'static ': ignored on left of 'Text::alignY' when no variable is declared
+  TestScene.cpp
+D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(10): warning C4091: 'static ': ignored on left of 'Text::alignX' when no variable is declared
+D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(11): warning C4091: 'static ': ignored on left of 'Text::alignY' when no variable is declared
+  TileMap.cpp
+  Generating Code...
   GameCode.vcxproj -> D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\Debug\GameCode.exe

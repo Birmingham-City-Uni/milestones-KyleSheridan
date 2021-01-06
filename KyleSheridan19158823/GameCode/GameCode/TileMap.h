@@ -2,6 +2,8 @@
 #include <SDL.h>
 #include <SDL_image.h>
 
+#include "Player.h"
+
 #define MAP_SIZE_X 20
 #define MAP_SIZE_Y 12
 
@@ -19,6 +21,7 @@ public:
 	void draw();
 	void clear();
 
+	bool isColliding(Player*, SDL_Rect);
 
 private:
 	SDL_Renderer* renderer;
@@ -38,4 +41,8 @@ private:
 		{ 7,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  9  },
 		{ 12, 13, 13, 10, 11, 13, 13, 10, 11, 13, 13, 10, 11, 13, 13, 10, 11, 13, 13, 14 }
 	};
+};
+
+class Tile {
+
 };

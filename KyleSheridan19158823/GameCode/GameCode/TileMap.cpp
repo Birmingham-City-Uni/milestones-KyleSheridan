@@ -26,3 +26,9 @@ void TileMap::draw()
 }
 
 void TileMap::clear() {}
+
+bool TileMap::isColliding(Player* player, SDL_Rect rect)
+{
+	SDL_Rect nullRect;
+	return SDL_IntersectRect(&player->getPosition(), &rect, &nullRect);
+}
