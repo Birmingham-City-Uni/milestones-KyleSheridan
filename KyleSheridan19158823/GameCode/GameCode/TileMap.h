@@ -1,8 +1,10 @@
 #pragma once
 #include <SDL.h>
 #include <SDL_image.h>
+#include <iostream>
 
 #include "Player.h"
+#include "BulletManager.h"
 
 #define MAP_SIZE_X 20
 #define MAP_SIZE_Y 12
@@ -11,10 +13,9 @@
 
 class TileMap {
 public:
-	TileMap(SDL_Renderer* renderer) {
-		this->renderer = renderer;
-	}
+	TileMap(SDL_Renderer* renderer, Player* player, BulletManager* bm) : renderer(renderer), player(player), bm(bm) {}
 	~TileMap() {}
+
 	void init();
 	void input();
 	void update();
@@ -22,10 +23,20 @@ public:
 	void clear();
 
 	bool isColliding(Player*, SDL_Rect);
+	//bool isColliding(Bullet)
+
+	struct Tile {
+		SDL_Rect srcRect;
+		SDL_Rect destRect;
+		bool collidable;
+	};
 
 private:
 	SDL_Renderer* renderer;
 	SDL_Texture* mapTileset;
+
+	Player* player;
+	BulletManager* bm;
 
 	const int MAP_DATA[MAP_SIZE_Y][MAP_SIZE_X] = {
 		{ 2,  3,  3,  5,  6,  3,  3,  5,  6,  3,  3,  5,  6,  3,  3,  5,  6,  3,  3,  4  },
@@ -41,8 +52,6 @@ private:
 		{ 7,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  9  },
 		{ 12, 13, 13, 10, 11, 13, 13, 10, 11, 13, 13, 10, 11, 13, 13, 10, 11, 13, 13, 14 }
 	};
-};
 
-class Tile {
-
+	Tile map[MAP_SIZE_Y][MAP_SIZE_X];
 };

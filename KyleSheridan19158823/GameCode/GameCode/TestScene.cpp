@@ -6,10 +6,6 @@ void TestScene::init()
 	background = new Background(this->renderer);
 	background->init();
 
-	//create TileMap
-	tileMap = new TileMap(this->renderer);
-	tileMap->init();
-
 	//create Player
 	player = new Player(this->renderer, fps);
 	player->init();
@@ -25,6 +21,10 @@ void TestScene::init()
 	//create BulletManager
 	bm = new BulletManager(this->renderer, this->player, this->scoreManager);
 	bm->init();
+
+	//create TileMap
+	tileMap = new TileMap(this->renderer, this->player, this->bm);
+	tileMap->init();
 }
 
 bool TestScene::input()
@@ -57,6 +57,7 @@ void TestScene::update()
 	enemy->update();
 	bm->update(enemy);
 	scoreManager->update();
+	tileMap->update();
 }
 
 void TestScene::draw()

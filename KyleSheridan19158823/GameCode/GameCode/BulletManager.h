@@ -47,7 +47,7 @@ public:
 	};
 
 	bool isColliding(Bullet*, Enemy*);
-
+	void wallCollide(SDL_Rect);
 	
 
 private:

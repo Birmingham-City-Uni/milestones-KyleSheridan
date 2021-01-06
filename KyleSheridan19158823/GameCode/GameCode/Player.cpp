@@ -42,6 +42,8 @@ void Player::input(bool* keyDown)
 
 void Player::update()
 {
+	lastPos = { position.x, position.y };
+	
 	position.x += v.x;
 	position.y += v.y;
 }

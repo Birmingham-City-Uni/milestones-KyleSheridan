@@ -5,6 +5,7 @@
 #include <math.h>
 
 #include "UI.h"
+#include "Player.h"
 
 #define ANIM_WAIT 300
 

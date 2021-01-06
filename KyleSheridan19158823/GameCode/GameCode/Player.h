@@ -19,6 +19,13 @@ public:
 		return position;
 	}
 
+	void wallCollide() {
+		position.x = lastPos.x;
+		position.y = lastPos.y;
+
+		std::cout << "works" << std::endl;
+	}
+
 private:
 	SDL_Texture* texture;
 	SDL_Renderer* renderer;
@@ -33,4 +40,6 @@ private:
 
 	int moveSpeed = 3;
 	int rotation = 0;
+
+	SDL_Point lastPos;
 };

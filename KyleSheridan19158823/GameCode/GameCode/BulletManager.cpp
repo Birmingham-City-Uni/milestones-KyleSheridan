@@ -113,3 +113,16 @@ bool BulletManager::isColliding(Bullet* bul, Enemy* enemy)
 	SDL_Rect nullRect;
 	return SDL_IntersectRect(&bulletRect, &enemy->hitbox, &nullRect);
 }
+
+void BulletManager::wallCollide(SDL_Rect rect) 
+{
+	for (int i = 0; i < POOL_SIZE; i++) {
+		if (bullets[i]->active) {
+			SDL_Rect bulletRect = { bullets[i]->x, bullets[i]->y, 20, 20 };
+			SDL_Rect nullRect;
+			if (SDL_IntersectRect(&bulletRect, &rect, &nullRect)) {
+				bullets[i]->active = false;
+			}
+		}
+	}
+}
