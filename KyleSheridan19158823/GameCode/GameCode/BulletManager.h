@@ -10,6 +10,7 @@
 #include "ScoreManager.h"
 
 #define PI 3.14159265
+#define POOL_SIZE 50
 
 using namespace std;
 
@@ -23,21 +24,41 @@ public:
 	void clear();
 
 	struct Bullet {
+	public:
 		int x, y, rotation, distance;
+		bool active;
+
+		Bullet() {
+			x = 0;
+			y = 0;
+			rotation = 0;
+			distance = 0;
+			active = false;
+		}
+
+		void setActive(int x, int y, int rot, int dist) {
+			this->x = x;
+			this->y = y;
+			this->rotation = rot;
+			this->distance = dist;
+
+			this->active = true;
+		}
 	};
 
-	bool isColliding(Bullet, Enemy*);
+	bool isColliding(Bullet*, Enemy*);
 
 	
 
 private:
 	SDL_Renderer* renderer;
 	SDL_Texture* bulletTexture;
-	vector<Bullet> bullets;
+	vector<Bullet*> bullets;
 
 	Player* player;
 	ScoreManager* sm;
 
+	const int MAX_DIST = 300;
 	const int SHOOT_TIMER_MS = 300;
 	const int BULLET_VELOCITY = 15;
 	unsigned int lastShot = 0;

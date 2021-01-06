@@ -54,7 +54,7 @@ void FPS::update()
     framespersecond /= count;
 
     framespersecond = 1000.0f / framespersecond;
-    std::cout << framespersecond << std::endl;
+    //std::cout << framespersecond << std::endl;
 }
 
 void FPS::clear()
