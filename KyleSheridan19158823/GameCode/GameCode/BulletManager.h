@@ -19,7 +19,7 @@ public:
 	BulletManager(SDL_Renderer* renderer, Player* player, ScoreManager* sm) : renderer(renderer), player(player), sm(sm) {}
 	void init();
 	void input(bool*);
-	void update(Enemy*);
+	void update(vector<Enemy*>);
 	void draw();
 	void clear();
 

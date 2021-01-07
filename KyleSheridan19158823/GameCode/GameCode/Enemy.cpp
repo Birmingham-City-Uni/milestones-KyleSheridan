@@ -1,6 +1,6 @@
 #include "Enemy.h"
 
-void Enemy::init()
+void Enemy::init(SDL_Rect rect)
 {
 	SDL_Surface* s = IMG_Load("assets/Alien1.png");
 	texture = SDL_CreateTextureFromSurface(renderer, s);
@@ -10,7 +10,7 @@ void Enemy::init()
 	texture2 = SDL_CreateTextureFromSurface(renderer, s);
 	SDL_FreeSurface(s);
 
-	this->position = { 576, 256, 64, 64 };
+	this->position = rect;
 	this->rotation = 0;
 
 	this->hitbox = { 0, 0, 32, 20 };

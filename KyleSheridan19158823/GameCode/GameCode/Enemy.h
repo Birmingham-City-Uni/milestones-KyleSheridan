@@ -12,7 +12,7 @@
 class Enemy {
 public:
 	Enemy(SDL_Renderer* renderer, Player* player) : renderer(renderer), player(player) {}
-	void init();
+	void init(SDL_Rect);
 	void update();
 	void draw();
 	void clear();

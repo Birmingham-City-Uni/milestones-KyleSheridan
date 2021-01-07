@@ -60,7 +60,7 @@ void BulletManager::input(bool* keyDown)
 	}
 }
 
-void BulletManager::update(Enemy* enemy) //Change parameter to array or vector
+void BulletManager::update(vector<Enemy*> enemies) //Change parameter to array or vector
 {
 	for (int i = 0; i < bullets.size(); i++) {
 		if (bullets[i]->active) {
@@ -77,11 +77,14 @@ void BulletManager::update(Enemy* enemy) //Change parameter to array or vector
 				bullets[i]->y += BULLET_VELOCITY;
 			}
 			bullets[i]->distance += BULLET_VELOCITY;
-
-			if (isColliding(bullets[i], enemy)) {
-				bullets[i]->active = false;
-				sm->increaseScore(10);
-				enemy->takeDamage(10);
+			
+			for (int j = 0; j < enemies.size(); j++)
+			{
+				if (isColliding(bullets[i], enemies[j])) {
+					bullets[i]->active = false;
+					sm->increaseScore(10);
+					enemies[j]->takeDamage(10);
+				}
 			}
 
 			if (bullets[i]->distance > MAX_DIST) {

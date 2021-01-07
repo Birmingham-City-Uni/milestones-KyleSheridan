@@ -164,6 +164,7 @@
     <ClCompile Include="TileMap.cpp" />
     <ClCompile Include="TitleScreen.cpp" />
     <ClCompile Include="UI.cpp" />
+    <ClCompile Include="WaveSpawner.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Background.h" />
@@ -178,6 +179,7 @@
     <ClInclude Include="TileMap.h" />
     <ClInclude Include="TitleScreen.h" />
     <ClInclude Include="UI.h" />
+    <ClInclude Include="WaveSpawner.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

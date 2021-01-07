@@ -6,6 +6,9 @@ void TileMap::init()
 	this->mapTileset = SDL_CreateTextureFromSurface(this->renderer, s);
 	SDL_FreeSurface(s);
 
+	spawner = new WaveSpawner(renderer, player);
+	spawner->init();
+
 	for (int y = 0; y < MAP_SIZE_Y; y++) {
 		for (int x = 0; x < MAP_SIZE_X; x++)
 		{
@@ -20,12 +23,14 @@ void TileMap::init()
 			if (MAP_DATA[y][x] == 0 || MAP_DATA[y][x] == 1)
 				collidable = false;
 
+			if (MAP_DATA[y][x] == 1) {
+				spawner->addSpawnPoint(destRect);
+			}
+
 			map[y][x] = Tile{ srcRect, destRect, collidable };
 		}
 	}
 }
-
-void TileMap::input() {}
 
 void TileMap::update() 
 {
@@ -40,6 +45,8 @@ void TileMap::update()
 			}
 		}
 	}
+
+	spawner->update();
 }
 
 void TileMap::draw()
@@ -49,6 +56,8 @@ void TileMap::draw()
 			SDL_RenderCopy(renderer, mapTileset, &map[y][x].srcRect, &map[y][x].destRect);
 		}
 	}
+
+	spawner->draw();
 }
 
 void TileMap::clear() {}
