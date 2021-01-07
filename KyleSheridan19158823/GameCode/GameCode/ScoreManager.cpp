@@ -2,7 +2,7 @@
 
 void ScoreManager::init() 
 {
-	scoreText = new Text(renderer, 18);
+	scoreText = new Text(renderer, 32);
 
 	score = 0;
 
@@ -16,7 +16,7 @@ void ScoreManager::update()
 
 void ScoreManager::draw()
 {
-	scoreText->draw(scoreString.c_str(), Text::alignX::LEFT, Text::alignY::TOP);
+	scoreText->draw(scoreString.c_str(), Text::alignX::RIGHT, Text::alignY::TOP);
 }
 
 void ScoreManager::clear()

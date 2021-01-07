@@ -11,7 +11,11 @@
 
 class Enemy {
 public:
-	Enemy(SDL_Renderer* renderer, Player* player) : renderer(renderer), player(player) {}
+	Enemy(SDL_Renderer* renderer, Player* player, int level) : renderer(renderer), player(player) 
+	{
+		maxHealth = (level * 10) + 40;
+		damage = (level * 3 + 6);
+	}
 	void init(SDL_Rect);
 	void update();
 	void draw();
@@ -55,7 +59,8 @@ private:
 
 	float movespeed = 2;
 
-	int maxHealth = 50;
+	int maxHealth;
+	int damage;
 
 	int health;
 

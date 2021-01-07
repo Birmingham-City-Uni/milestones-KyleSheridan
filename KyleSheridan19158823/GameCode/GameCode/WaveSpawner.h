@@ -3,6 +3,7 @@
 #include <SDL_image.h>
 #include <iostream>
 #include <vector>
+#include <string>
 
 #include "Enemy.h"
 #include "UI.h"
@@ -30,9 +31,19 @@ public:
 		enemiesRemaining = (waveNumber * 3) + 9;
 
 		cout << waveNumber << endl;
+
+		endWave = true;
 	}
 
-	vector<Enemy*> getEnemies() {
+	bool getEndWave() {
+		return endWave;
+	}
+
+	void resetEndWave() {
+		endWave = false;
+	}
+
+	vector<Enemy*>& getEnemies() {
 		return enemies;
 	}
 
@@ -47,6 +58,8 @@ private:
 	int waveNumber;
 	int enemiesRemaining;
 	unsigned int lastSpawnTime = 0;
+
+	bool endWave = false;
 
 	Text* waveText;
 	string waveString;

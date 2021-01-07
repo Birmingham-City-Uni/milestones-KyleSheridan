@@ -47,6 +47,11 @@ void TileMap::update()
 	}
 
 	spawner->update();
+
+	if (spawner->getEndWave()) {
+		createCrate();
+		spawner->resetEndWave();
+	}
 }
 
 void TileMap::draw()
@@ -66,4 +71,19 @@ bool TileMap::isColliding(Player* player, SDL_Rect rect)
 {
 	SDL_Rect nullRect;
 	return SDL_IntersectRect(&player->getHitbox(), &rect, &nullRect);
+}
+
+void TileMap::createCrate()
+{
+	int randX;
+	int randY;
+
+	do {
+		randX = (rand() % (MAP_SIZE_X - 2)) + 1;
+		randY = (rand() % (MAP_SIZE_Y - 2)) + 1;
+
+	} while (isColliding(player, map[randY][randX].destRect));
+
+	map[randY][randX].srcRect = { (8 % 5) * 32, (8 / 5) * 32, 32, 32 };
+	map[randY][randX].collidable = true;
 }

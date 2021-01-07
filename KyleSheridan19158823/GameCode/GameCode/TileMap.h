@@ -2,6 +2,7 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include <iostream>
+#include <math.h>
 
 #include "Player.h"
 #include "BulletManager.h"
@@ -25,6 +26,8 @@ public:
 
 	bool isColliding(Player*, SDL_Rect);
 	//bool isColliding(Bullet)
+
+	void createCrate();
 
 	WaveSpawner* getWaveSpawner() {
 		return spawner;

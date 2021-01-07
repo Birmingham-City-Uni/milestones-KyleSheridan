@@ -36,6 +36,9 @@ void Enemy::update()
 		position.x += direct.x * movespeed;
 		position.y += direct.y * movespeed;
 	}
+	else {
+		player->takeDamage(damage);
+	}
 
 	movespeed = 2;
 

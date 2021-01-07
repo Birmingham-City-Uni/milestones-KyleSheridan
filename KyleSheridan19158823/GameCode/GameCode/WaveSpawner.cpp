@@ -2,7 +2,7 @@
 
 void WaveSpawner::init()
 {
-	waveText = new Text(renderer, 18);
+	waveText = new Text(renderer, 32);
 	waveNumber = 0;
 	waveString = "Wave: 0";
 
@@ -19,21 +19,32 @@ void WaveSpawner::update()
 		int point = rand() % spawnPoints.size();
 
 		enemiesRemaining--;
-		Enemy* enemy = new Enemy(renderer, player);
+		Enemy* enemy = new Enemy(renderer, player, waveNumber);
 		enemy->init(spawnPoints[point]);
 		enemies.push_back(enemy);
 
 		lastSpawnTime = SDL_GetTicks();
 	}
 
-	for (int i = 0; i < enemies.size(); i++) {
-		enemies[i]->update();
+	waveString = "Wave: " + std::to_string(waveNumber);
+
+	for (Enemy*& enemy : enemies) {
+		enemy->update();
+
+		if (enemy->getHealth() <= 0) {
+			enemy->clear();
+			delete enemy;
+			enemies.erase(enemies.begin() + (&enemy - &*(enemies.begin())));
+			return;
+		}
 	}
 }
 
 void WaveSpawner::draw()
 {
-	for (int i = 0; i < enemies.size(); i++) {
-		enemies[i]->draw();
+	for (Enemy*& enemy : enemies) {
+		enemy->draw();
 	}
+
+	waveText->draw(waveString.c_str(), Text::alignX::LEFT, Text::alignY::TOP);
 }

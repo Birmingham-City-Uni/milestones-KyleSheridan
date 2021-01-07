@@ -7,7 +7,7 @@ void TestScene::init()
 	background->init();
 
 	//create Player
-	player = new Player(this->renderer, fps);
+	player = new Player(this->renderer);
 	player->init();
 
 	/*
