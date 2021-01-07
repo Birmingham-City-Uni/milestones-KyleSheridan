@@ -19,11 +19,17 @@ public:
 		return position;
 	}
 
+	SDL_Rect getHitbox() {
+		return hitbox;
+	}
+
 	void wallCollide() {
 		position.x = lastPos.x;
 		position.y = lastPos.y;
 
-		std::cout << "works" << std::endl;
+		//hitbox
+		this->hitbox.x = position.x + 0.5 * (position.w - hitbox.w);
+		this->hitbox.y = position.y + 0.5 * (position.h - hitbox.h);
 	}
 
 private:
@@ -31,6 +37,7 @@ private:
 	SDL_Renderer* renderer;
 
 	SDL_Rect position;
+	SDL_Rect hitbox;
 
 	FPS* fps;
 

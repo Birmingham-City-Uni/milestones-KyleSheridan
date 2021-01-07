@@ -7,6 +7,8 @@ void Player::init()
 	SDL_FreeSurface(s);
 
 	position = { 64, 64, 64, 64 };
+
+	hitbox = { 0,0,32,32 };
 }
 
 void Player::input(bool* keyDown)
@@ -46,6 +48,10 @@ void Player::update()
 	
 	position.x += v.x;
 	position.y += v.y;
+
+	//hitbox
+	hitbox.x = position.x + 0.5 * (position.w - hitbox.w);
+	hitbox.y = position.y + 0.5 * (position.h - hitbox.h);
 }
 
 void Player::draw()

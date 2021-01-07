@@ -11,7 +11,7 @@ void TestScene::init()
 	player->init();
 
 	//create Enemy
-	enemy = new Enemy(this->renderer);
+	enemy = new Enemy(this->renderer, this->player);
 	enemy->init();
 
 	//create ScoreManager
