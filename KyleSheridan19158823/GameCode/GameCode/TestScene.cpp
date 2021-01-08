@@ -58,8 +58,6 @@ void TestScene::update()
 		gameOver = new GameOver(renderer, scoreManager->getScore());
 		gameOver->init();
 
-		gameOver->draw();
-
 		gameOverOnce = true;
 	}
 }
@@ -71,6 +69,10 @@ void TestScene::draw()
 	bm->draw();
 	player->draw();
 	scoreManager->draw();
+
+	if (player->getGameOver()) {
+		gameOver->draw();
+	}
 }
 
 void TestScene::clear()
