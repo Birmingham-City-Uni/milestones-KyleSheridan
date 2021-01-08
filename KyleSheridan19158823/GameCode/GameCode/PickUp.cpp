@@ -65,7 +65,7 @@ void PickUp::pickUpEffect() {
 		collected = true;
 		break;
 	case PickUp::Type::HEAL:
-		player->takeDamage(-20);
+		player->takeDamage(-100);
 		collected = true;
 		break;
 	default:

@@ -10,12 +10,6 @@ void TestScene::init()
 	player = new Player(this->renderer);
 	player->init();
 
-	/*
-	//create Enemy
-	enemy = new Enemy(this->renderer, this->player);
-	enemy->init();
-	*/
-
 	//create ScoreManager
 	scoreManager = new ScoreManager(this->renderer);
 	scoreManager->init();
@@ -56,20 +50,26 @@ bool TestScene::input()
 void TestScene::update()
 {
 	player->update();
-	//enemy->update();
 	bm->update(tileMap->getWaveSpawner()->getEnemies());
 	scoreManager->update();
 	tileMap->update();
+
+	if (player->getGameOver()) {
+		gameOver = new GameOver(renderer, scoreManager->getScore());
+		gameOver->init();
+	}
 }
 
 void TestScene::draw()
 {
 	background->draw();
 	tileMap->draw();
-	//enemy->draw();
 	bm->draw();
 	player->draw();
 	scoreManager->draw();
+	if (player->getGameOver()) {
+		gameOver->draw();
+	}
 }
 
 void TestScene::clear()
@@ -97,12 +97,6 @@ void TestScene::clear()
 		delete bm;
 		bm = nullptr;
 	}
-
-	//enemy->clear();
-	//if (enemy) {
-	//	delete enemy;
-	//	enemy = nullptr;
-	//}
 
 	scoreManager->clear();
 	if (scoreManager) {

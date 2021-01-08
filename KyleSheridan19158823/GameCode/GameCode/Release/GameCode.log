@@ -1,44 +1,8 @@
-﻿  BulletManager.cpp
+﻿  GameLoop.cpp
 D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(10): warning C4091: 'static ': ignored on left of 'Text::alignX' when no variable is declared
 D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(11): warning C4091: 'static ': ignored on left of 'Text::alignY' when no variable is declared
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Player.h(47,31): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Player.h(48,31): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Enemy.h(39,101): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Enemy.h(39,63): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Enemy.h(39,139): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\BulletManager.cpp(18,33): warning C4018: '>': signed/unsigned mismatch
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\BulletManager.cpp(19,22): warning C4018: '<': signed/unsigned mismatch
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\BulletManager.cpp(29,33): warning C4018: '>': signed/unsigned mismatch
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\BulletManager.cpp(30,22): warning C4018: '<': signed/unsigned mismatch
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\BulletManager.cpp(40,33): warning C4018: '>': signed/unsigned mismatch
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\BulletManager.cpp(41,22): warning C4018: '<': signed/unsigned mismatch
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\BulletManager.cpp(51,33): warning C4018: '>': signed/unsigned mismatch
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\BulletManager.cpp(52,22): warning C4018: '<': signed/unsigned mismatch
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\BulletManager.cpp(65,67): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\BulletManager.cpp(68,20): warning C4018: '<': signed/unsigned mismatch
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\BulletManager.cpp(84,22): warning C4018: '<': signed/unsigned mismatch
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\BulletManager.cpp(103,20): warning C4018: '<': signed/unsigned mismatch
-  Enemy.cpp
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(10): warning C4091: 'static ': ignored on left of 'Text::alignX' when no variable is declared
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(11): warning C4091: 'static ': ignored on left of 'Text::alignY' when no variable is declared
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Player.h(47,31): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Player.h(48,31): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Enemy.h(39,101): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Enemy.h(39,63): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Enemy.h(39,139): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Enemy.cpp(33,22): warning C4305: '=': truncation from 'double' to 'float'
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Enemy.cpp(36,37): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Enemy.cpp(37,37): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Enemy.cpp(46,30): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Enemy.cpp(47,30): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Enemy.cpp(49,22): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Enemy.cpp(81,14): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Enemy.cpp(82,14): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-  GameLoop.cpp
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(10): warning C4091: 'static ': ignored on left of 'Text::alignX' when no variable is declared
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(11): warning C4091: 'static ': ignored on left of 'Text::alignY' when no variable is declared
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Player.h(47,31): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Player.h(48,31): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Player.h(51,31): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Player.h(52,31): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
 D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Enemy.h(39,101): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Enemy.h(39,63): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Enemy.h(39,139): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
@@ -47,58 +11,16 @@ D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCo
   Main.cpp
 D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(10): warning C4091: 'static ': ignored on left of 'Text::alignX' when no variable is declared
 D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(11): warning C4091: 'static ': ignored on left of 'Text::alignY' when no variable is declared
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Player.h(47,31): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Player.h(48,31): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Player.h(51,31): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Player.h(52,31): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
 D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Enemy.h(39,101): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Enemy.h(39,63): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Enemy.h(39,139): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
 D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\PickUp.h(12): warning C4091: 'static ': ignored on left of 'PickUp::Type' when no variable is declared
 D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\PickUp.h(30,13): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-  PickUp.cpp
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(10): warning C4091: 'static ': ignored on left of 'Text::alignX' when no variable is declared
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(11): warning C4091: 'static ': ignored on left of 'Text::alignY' when no variable is declared
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Player.h(47,31): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Player.h(48,31): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\PickUp.h(12): warning C4091: 'static ': ignored on left of 'PickUp::Type' when no variable is declared
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\PickUp.h(30,13): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-  Player.cpp
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(10): warning C4091: 'static ': ignored on left of 'Text::alignX' when no variable is declared
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(11): warning C4091: 'static ': ignored on left of 'Text::alignY' when no variable is declared
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Player.h(47,31): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Player.h(48,31): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Player.cpp(64,24): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Player.cpp(65,24): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-  TestScene.cpp
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(10): warning C4091: 'static ': ignored on left of 'Text::alignX' when no variable is declared
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(11): warning C4091: 'static ': ignored on left of 'Text::alignY' when no variable is declared
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Player.h(47,31): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Player.h(48,31): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Enemy.h(39,101): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Enemy.h(39,63): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Enemy.h(39,139): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\PickUp.h(12): warning C4091: 'static ': ignored on left of 'PickUp::Type' when no variable is declared
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\PickUp.h(30,13): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-  TileMap.cpp
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(10): warning C4091: 'static ': ignored on left of 'Text::alignX' when no variable is declared
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(11): warning C4091: 'static ': ignored on left of 'Text::alignY' when no variable is declared
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Player.h(47,31): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Player.h(48,31): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Enemy.h(39,101): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Enemy.h(39,63): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Enemy.h(39,139): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\PickUp.h(12): warning C4091: 'static ': ignored on left of 'PickUp::Type' when no variable is declared
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\PickUp.h(30,13): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-  WaveSpawner.cpp
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(10): warning C4091: 'static ': ignored on left of 'Text::alignX' when no variable is declared
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(11): warning C4091: 'static ': ignored on left of 'Text::alignY' when no variable is declared
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Player.h(47,31): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Player.h(48,31): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Enemy.h(39,101): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Enemy.h(39,63): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Enemy.h(39,139): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
   Generating code
-  7 of 427 functions ( 1.6%) were compiled, the rest were copied from previous compilation.
+  1 of 433 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    3 functions had inline decision re-evaluated but remain unchanged
+    1 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   GameCode.vcxproj -> D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\Release\GameCode.exe

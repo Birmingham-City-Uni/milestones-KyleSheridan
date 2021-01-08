@@ -7,6 +7,7 @@
 #include "BulletManager.h"
 #include "Enemy.h"
 #include "ScoreManager.h"
+#include "GameOver.h"
 
 class TestScene : public Scene {
 public:
@@ -23,4 +24,6 @@ private:
 	BulletManager* bm;
 	Enemy* enemy;
 	ScoreManager* scoreManager;
+
+	GameOver* gameOver;
 };

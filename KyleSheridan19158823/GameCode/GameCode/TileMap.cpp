@@ -16,7 +16,6 @@ void TileMap::init()
 			SDL_Rect srcRect = { (MAP_DATA[y][x] % 5) * 32, (MAP_DATA[y][x] / 5) * 32, 32, 32 };
 			//calc pos
 			SDL_Rect destRect = { x * MAP_TILE_SIZE, y * MAP_TILE_SIZE, MAP_TILE_SIZE, MAP_TILE_SIZE };
-			//SDL_RenderCopy(renderer, mapTileset, &srcRect, &destRect);
 
 			bool collidable = true;
 

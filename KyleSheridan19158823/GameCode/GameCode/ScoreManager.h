@@ -20,6 +20,9 @@ public:
 		score += amount;
 	}
 	
+	int getScore() {
+		return score;
+	}
 
 private:
 	SDL_Renderer* renderer;

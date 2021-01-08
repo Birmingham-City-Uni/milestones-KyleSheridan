@@ -39,6 +39,10 @@ public:
 		return range;
 	}
 
+	bool getGameOver() {
+		return gameOver;
+	}
+
 	void wallCollide() {
 		position.x = lastPos.x;
 		position.y = lastPos.y;
@@ -58,27 +62,19 @@ public:
 
 	void increaseDamage() {
 		damage += 5;
-
-		cout << "Damage: " << damage << endl;
 	}
 
 	void increaseHealth() {
 		maxHealth += 20;
 		takeDamage(-20);
-
-		cout << "Health: " << maxHealth << endl;
 	}
 
 	void increaseFireRate() {
 		fireRate += 1;
-
-		cout << "Fire rate: " << fireRate << endl;
 	}
 
 	void increaseRange() {
 		range += 50;
-
-		cout << "Range: " << range << endl;
 	}
 
 private:
@@ -107,4 +103,6 @@ private:
 	int rotation = 0;
 
 	SDL_Point lastPos;
+
+	bool gameOver = false;
 };

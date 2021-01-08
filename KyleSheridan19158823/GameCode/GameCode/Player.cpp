@@ -55,6 +55,10 @@ void Player::update()
 		health = maxHealth;
 	}
 
+	if (health <= 0) {
+		gameOver = true;
+	}
+
 	lastPos = { position.x, position.y };
 	
 	position.x += v.x;

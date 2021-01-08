@@ -26,7 +26,6 @@ public:
 	void clear();
 
 	bool isColliding(Player*, SDL_Rect);
-	//bool isColliding(Bullet)
 	
 	struct Tile {
 		SDL_Rect srcRect;
