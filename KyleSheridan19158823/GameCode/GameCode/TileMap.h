@@ -7,6 +7,7 @@
 #include "Player.h"
 #include "BulletManager.h"
 #include "WaveSpawner.h"
+#include "PickUp.h"
 
 #define MAP_SIZE_X 20
 #define MAP_SIZE_Y 12
@@ -26,18 +27,23 @@ public:
 
 	bool isColliding(Player*, SDL_Rect);
 	//bool isColliding(Bullet)
+	
+	struct Tile {
+		SDL_Rect srcRect;
+		SDL_Rect destRect;
+		bool collidable;
+		bool destroyable;
+	};
 
 	void createCrate();
+	void destroyCrate(Tile*);
+	
+	void spawnPickUp(SDL_Rect&);
 
 	WaveSpawner* getWaveSpawner() {
 		return spawner;
 	}
 
-	struct Tile {
-		SDL_Rect srcRect;
-		SDL_Rect destRect;
-		bool collidable;
-	};
 
 private:
 	SDL_Renderer* renderer;
@@ -47,6 +53,8 @@ private:
 
 	Player* player;
 	BulletManager* bm;
+
+	vector<PickUp*> pickUps;
 
 	const int MAP_DATA[MAP_SIZE_Y][MAP_SIZE_X] = {
 		{ 2,  3,  3,  5,  6,  3,  3,  5,  6,  3,  3,  5,  6,  3,  3,  5,  6,  3,  3,  4  },

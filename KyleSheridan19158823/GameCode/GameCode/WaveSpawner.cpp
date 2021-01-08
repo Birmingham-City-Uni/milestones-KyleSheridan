@@ -19,7 +19,7 @@ void WaveSpawner::update()
 		int point = rand() % spawnPoints.size();
 
 		enemiesRemaining--;
-		Enemy* enemy = new Enemy(renderer, player, waveNumber);
+		Enemy* enemy = new Enemy(renderer, player, (rand() % waveNumber) + 1);
 		enemy->init(spawnPoints[point]);
 		enemies.push_back(enemy);
 

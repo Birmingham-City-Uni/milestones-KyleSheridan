@@ -41,7 +41,11 @@ void TileMap::update()
 					player->wallCollide();
 				}
 
-				bm->wallCollide(map[y][x].destRect);
+				if (bm->wallCollide(map[y][x].destRect)) {
+					if (map[y][x].destroyable) {
+						destroyCrate(&map[y][x]);
+					}
+				}
 			}
 		}
 	}
@@ -52,6 +56,16 @@ void TileMap::update()
 		createCrate();
 		spawner->resetEndWave();
 	}
+
+	for (PickUp*& pickup : pickUps) {
+		pickup->update();
+
+		if (pickup->getCollected()) {
+			delete pickup;
+			pickUps.erase(pickUps.begin() + (&pickup - &*(pickUps.begin())));
+			return;
+		}
+	}
 }
 
 void TileMap::draw()
@@ -61,8 +75,12 @@ void TileMap::draw()
 			SDL_RenderCopy(renderer, mapTileset, &map[y][x].srcRect, &map[y][x].destRect);
 		}
 	}
+	for (PickUp*& pickup : pickUps) {
+		pickup->draw();
+	}
 
 	spawner->draw();
+
 }
 
 void TileMap::clear() {}
@@ -86,4 +104,28 @@ void TileMap::createCrate()
 
 	map[randY][randX].srcRect = { (8 % 5) * 32, (8 / 5) * 32, 32, 32 };
 	map[randY][randX].collidable = true;
+	map[randY][randX].destroyable = true;
+}
+
+void TileMap::destroyCrate(Tile* tile)
+{
+	tile->srcRect = { 0, 0, 32, 32 };
+
+	tile->collidable = false;
+	tile->destroyable = false;
+
+	spawnPickUp(tile->destRect);
+}
+
+//spawn pick up with random type and add it to vector
+void TileMap::spawnPickUp(SDL_Rect& rect)
+{
+	SDL_Rect pickUpRect = { rect.x + (rect.w / 4), rect.y + (rect.h / 4), rect.w / 2, rect.h / 2 };
+
+	int randType = rand() % 5;
+
+	PickUp* pickup = new PickUp(renderer, player, static_cast<PickUp::Type>(randType), pickUpRect);
+	pickup->init();
+
+	pickUps.push_back(pickup);
 }

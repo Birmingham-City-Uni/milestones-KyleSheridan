@@ -62,6 +62,9 @@ void BulletManager::input(bool* keyDown)
 
 void BulletManager::update(vector<Enemy*> enemies) //Change parameter to array or vector
 {
+	SHOOT_TIMER_MS = (1 / static_cast<float>(player->getFireRate())) * 1000;
+	MAX_DIST = player->getRange();
+
 	for (int i = 0; i < bullets.size(); i++) {
 		if (bullets[i]->active) {
 			if (bullets[i]->rotation == 90) {
@@ -117,7 +120,7 @@ bool BulletManager::isColliding(Bullet* bul, Enemy* enemy)
 	return SDL_IntersectRect(&bulletRect, &enemy->hitbox, &nullRect);
 }
 
-void BulletManager::wallCollide(SDL_Rect rect) 
+bool BulletManager::wallCollide(SDL_Rect rect) 
 {
 	for (int i = 0; i < POOL_SIZE; i++) {
 		if (bullets[i]->active) {
@@ -125,7 +128,10 @@ void BulletManager::wallCollide(SDL_Rect rect)
 			SDL_Rect nullRect;
 			if (SDL_IntersectRect(&bulletRect, &rect, &nullRect)) {
 				bullets[i]->active = false;
+				return true;
 			}
 		}
 	}
+
+	return false;
 }

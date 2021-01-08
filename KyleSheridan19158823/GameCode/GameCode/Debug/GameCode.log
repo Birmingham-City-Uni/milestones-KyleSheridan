@@ -1,9 +1,8 @@
-﻿  TileMap.cpp
+﻿  PickUp.cpp
 D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(10): warning C4091: 'static ': ignored on left of 'Text::alignX' when no variable is declared
 D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(11): warning C4091: 'static ': ignored on left of 'Text::alignY' when no variable is declared
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Player.h(33,31): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Player.h(34,31): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Enemy.h(39,101): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Enemy.h(39,63): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Enemy.h(39,139): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Player.h(41,31): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Player.h(42,31): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\PickUp.h(12): warning C4091: 'static ': ignored on left of 'PickUp::Type' when no variable is declared
+D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\PickUp.h(26,13): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
   GameCode.vcxproj -> D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\Debug\GameCode.exe

@@ -7,6 +7,8 @@
 
 #define I_FRAMES 400
 
+using namespace std;
+
 class Player {
 public:
 	Player(SDL_Renderer* renderer) : renderer(renderer) {}
@@ -23,6 +25,18 @@ public:
 
 	SDL_Rect getHitbox() {
 		return hitbox;
+	}
+
+	int getDamage() {
+		return damage;
+	}
+
+	int getFireRate() {
+		return fireRate;
+	}
+
+	int getRange() {
+		return range;
 	}
 
 	void wallCollide() {
@@ -42,6 +56,31 @@ public:
 		}
 	}
 
+	void increaseDamage() {
+		damage += 5;
+
+		cout << "Damage: " << damage << endl;
+	}
+
+	void increaseHealth() {
+		maxHealth += 20;
+		takeDamage(-20);
+
+		cout << "Health: " << maxHealth << endl;
+	}
+
+	void increaseFireRate() {
+		fireRate += 1;
+
+		cout << "Fire rate: " << fireRate << endl;
+	}
+
+	void increaseRange() {
+		range += 50;
+
+		cout << "Range: " << range << endl;
+	}
+
 private:
 	SDL_Texture* texture;
 	SDL_Renderer* renderer;
@@ -56,6 +95,10 @@ private:
 	Velocity v;
 
 	int lastHit = 0;
+
+	int damage = 10;
+	int fireRate = 3;
+	int range = 300;
 
 	int maxHealth;
 	int health;

@@ -51,6 +51,10 @@ void Player::input(bool* keyDown)
 
 void Player::update()
 {
+	if (health > maxHealth) {
+		health = maxHealth;
+	}
+
 	lastPos = { position.x, position.y };
 	
 	position.x += v.x;
@@ -65,7 +69,6 @@ void Player::update()
 
 void Player::draw()
 {
-	//SDL_Point center = { 32,32 };
 	SDL_RenderCopyEx(this->renderer, this->texture, 0, &this->position, this->rotation, NULL, SDL_FLIP_NONE);
 
 	healthBar->draw();

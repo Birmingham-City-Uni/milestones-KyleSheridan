@@ -47,7 +47,7 @@ public:
 	};
 
 	bool isColliding(Bullet*, Enemy*);
-	void wallCollide(SDL_Rect);
+	bool wallCollide(SDL_Rect);
 	
 
 private:
@@ -58,8 +58,8 @@ private:
 	Player* player;
 	ScoreManager* sm;
 
-	const int MAX_DIST = 300;
-	const int SHOOT_TIMER_MS = 300;
+	int MAX_DIST = 300;
+	int SHOOT_TIMER_MS = 333;
 	const int BULLET_VELOCITY = 15;
 	unsigned int lastShot = 0;
 };

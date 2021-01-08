@@ -50,6 +50,7 @@ void Enemy::update()
 
 	healthBar->update(position.x, position.y, (static_cast<float> (health) / maxHealth));
 
+	//anim will be true on frame 1 of animation
 	if (anim && SDL_GetTicks() - lastAnimFrame > ANIM_WAIT) {
 		anim = false;
 		lastAnimFrame = SDL_GetTicks();
