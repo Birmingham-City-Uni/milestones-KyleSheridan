@@ -26,4 +26,6 @@ private:
 	ScoreManager* scoreManager;
 
 	GameOver* gameOver;
+
+	bool gameOverOnce = false;
 };
