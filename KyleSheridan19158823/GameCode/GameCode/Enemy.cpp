@@ -1,6 +1,6 @@
 #include "Enemy.h"
 
-void Enemy::init(SDL_Rect rect)
+void Enemy::init()
 {
 	SDL_Surface* s = IMG_Load("assets/Alien1.png");
 	texture = SDL_CreateTextureFromSurface(renderer, s);
@@ -10,12 +10,7 @@ void Enemy::init(SDL_Rect rect)
 	texture2 = SDL_CreateTextureFromSurface(renderer, s);
 	SDL_FreeSurface(s);
 
-	this->position = rect;
-	this->rotation = 0;
-
 	this->hitbox = { 0, 0, 32, 20 };
-
-	this->health = maxHealth;
 
 	//health bar
 	healthBar = new HealthBar(renderer, position.x, position.y - 10);
@@ -24,40 +19,42 @@ void Enemy::init(SDL_Rect rect)
 
 void Enemy::update()
 {
-	Vector direct = findDirection(position.x, position.y, player->getPosition().x, player->getPosition().y);
+	if (active) {
+		Vector direct = findDirection(position.x, position.y, player->getPosition().x, player->getPosition().y);
 
-	SDL_Rect nullRect;
+		SDL_Rect nullRect;
 
-	if (!SDL_IntersectRect(&hitbox, &player->getHitbox(), &nullRect)) {
-		if(direct.x == 0 && direct.y == 0){
-			movespeed = 1.4142;
+		if (!SDL_IntersectRect(&hitbox, &player->getHitbox(), &nullRect)) {
+			if(direct.x == 0 && direct.y == 0){
+				movespeed = 1.4142;
+			}
+
+			position.x += direct.x * movespeed;
+			position.y += direct.y * movespeed;
+		}
+		else {
+			player->takeDamage(damage);
 		}
 
-		position.x += direct.x * movespeed;
-		position.y += direct.y * movespeed;
-	}
-	else {
-		player->takeDamage(damage);
-	}
+		movespeed = 2;
 
-	movespeed = 2;
+		//hitbox
+		this->hitbox.x = position.x + 0.5 * (position.w - hitbox.w);
+		this->hitbox.y = position.y + 0.5 * (position.h - hitbox.h);
 
-	//hitbox
-	this->hitbox.x = position.x + 0.5 * (position.w - hitbox.w);
-	this->hitbox.y = position.y + 0.5 * (position.h - hitbox.h);
+		rotation = findAngle();
 
-	rotation = findAngle();
+		healthBar->update(position.x, position.y, (static_cast<float> (health) / maxHealth));
 
-	healthBar->update(position.x, position.y, (static_cast<float> (health) / maxHealth));
-
-	//anim will be true on frame 1 of animation
-	if (anim && SDL_GetTicks() - lastAnimFrame > ANIM_WAIT) {
-		anim = false;
-		lastAnimFrame = SDL_GetTicks();
-	}
-	else if(!anim && SDL_GetTicks() - lastAnimFrame > ANIM_WAIT){
-		anim = true;
-		lastAnimFrame = SDL_GetTicks();
+		//anim will be true on frame 1 of animation
+		if (anim && SDL_GetTicks() - lastAnimFrame > ANIM_WAIT) {
+			anim = false;
+			lastAnimFrame = SDL_GetTicks();
+		}
+		else if(!anim && SDL_GetTicks() - lastAnimFrame > ANIM_WAIT){
+			anim = true;
+			lastAnimFrame = SDL_GetTicks();
+		}
 	}
 }
 

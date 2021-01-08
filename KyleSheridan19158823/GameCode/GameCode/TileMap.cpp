@@ -19,32 +19,38 @@ void TileMap::init()
 
 			bool collidable = true;
 
-			if (MAP_DATA[y][x] == 0 || MAP_DATA[y][x] == 1)
+			if (MAP_DATA[y][x] == 0) {
 				collidable = false;
 
-			if (MAP_DATA[y][x] == 1) {
+				map[y][x] = Tile{ srcRect, destRect, collidable };
+			}
+			else if (MAP_DATA[y][x] == 1) {
 				spawner->addSpawnPoint(destRect);
+
+				collidable = false;
+
+				map[y][x] = Tile{ srcRect, destRect, collidable };
+			}
+			else {
+				map[y][x] = Tile{ srcRect, destRect, collidable };
+
+				collidableTiles.push_back(&map[y][x]);
 			}
 
-			map[y][x] = Tile{ srcRect, destRect, collidable };
 		}
 	}
 }
 
 void TileMap::update() 
 {
-	for (int y = 0; y < MAP_SIZE_Y; y++) {
-		for (int x = 0; x < MAP_SIZE_X; x++) {
-			if (map[y][x].collidable) {
-				if (isColliding(player, map[y][x].destRect)) {
-					player->wallCollide();
-				}
+	for (Tile*& tile : collidableTiles) {
+		if (isColliding(player, tile->destRect)) {
+			player->wallCollide();
+		}
 
-				if (bm->wallCollide(map[y][x].destRect)) {
-					if (map[y][x].destroyable) {
-						destroyCrate(&map[y][x]);
-					}
-				}
+		if (bm->wallCollide(tile->destRect)) {
+			if (tile->destroyable) {
+				destroyCrate(tile);
 			}
 		}
 	}
@@ -104,6 +110,8 @@ void TileMap::createCrate()
 	map[randY][randX].srcRect = { (8 % 5) * 32, (8 / 5) * 32, 32, 32 };
 	map[randY][randX].collidable = true;
 	map[randY][randX].destroyable = true;
+
+	collidableTiles.push_back(&map[randY][randX]);
 }
 
 void TileMap::destroyCrate(Tile* tile)
@@ -114,6 +122,8 @@ void TileMap::destroyCrate(Tile* tile)
 	tile->destroyable = false;
 
 	spawnPickUp(tile->destRect);
+
+	collidableTiles.erase(remove(collidableTiles.begin(), collidableTiles.end(), tile), collidableTiles.end());
 }
 
 //spawn pick up with random type and add it to vector

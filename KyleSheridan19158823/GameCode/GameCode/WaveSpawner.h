@@ -11,6 +11,7 @@
 using namespace std;
 
 #define SPAWN_WAIT 1000
+#define POOL_SIZE 30
 
 class WaveSpawner {
 public:
@@ -29,6 +30,8 @@ public:
 		waveNumber++;
 
 		enemiesRemaining = (waveNumber * 3) + 9;
+
+		enemyCount = enemiesRemaining;
 
 		cout << waveNumber << endl;
 
@@ -57,6 +60,7 @@ private:
 
 	int waveNumber;
 	int enemiesRemaining;
+	int enemyCount;
 	unsigned int lastSpawnTime = 0;
 
 	bool endWave = false;

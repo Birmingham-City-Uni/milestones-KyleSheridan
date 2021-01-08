@@ -1,26 +1,14 @@
-﻿  GameLoop.cpp
+﻿  WaveSpawner.cpp
 D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(10): warning C4091: 'static ': ignored on left of 'Text::alignX' when no variable is declared
 D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(11): warning C4091: 'static ': ignored on left of 'Text::alignY' when no variable is declared
 D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Player.h(51,31): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
 D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Player.h(52,31): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Enemy.h(39,101): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Enemy.h(39,63): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Enemy.h(39,139): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\PickUp.h(12): warning C4091: 'static ': ignored on left of 'PickUp::Type' when no variable is declared
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\PickUp.h(30,13): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-  Main.cpp
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(10): warning C4091: 'static ': ignored on left of 'Text::alignX' when no variable is declared
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\UI.h(11): warning C4091: 'static ': ignored on left of 'Text::alignY' when no variable is declared
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Player.h(51,31): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Player.h(52,31): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Enemy.h(39,101): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Enemy.h(39,63): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Enemy.h(39,139): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\PickUp.h(12): warning C4091: 'static ': ignored on left of 'PickUp::Type' when no variable is declared
-D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\PickUp.h(30,13): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Enemy.h(59,101): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Enemy.h(59,63): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\GameCode\Enemy.h(59,139): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
   Generating code
-  1 of 433 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
+  2 of 473 functions ( 0.4%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    1 functions had inline decision re-evaluated but remain unchanged
+    7 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   GameCode.vcxproj -> D:\Documents\GitHub\milestones-KyleSheridan\KyleSheridan19158823\GameCode\Release\GameCode.exe

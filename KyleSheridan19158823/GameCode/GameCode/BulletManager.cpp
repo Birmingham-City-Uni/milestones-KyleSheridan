@@ -80,7 +80,18 @@ void BulletManager::update(vector<Enemy*> enemies) //Change parameter to array o
 				bullets[i]->y += BULLET_VELOCITY;
 			}
 			bullets[i]->distance += BULLET_VELOCITY;
+
+			for (Enemy*& enemy : enemies) {
+				if (enemy->getActive()) {
+					if (isColliding(bullets[i], enemy)) {
+						bullets[i]->active = false;
+						sm->increaseScore(10);
+						enemy->takeDamage(10);
+					}
+				}
+			}
 			
+			/*
 			for (int j = 0; j < enemies.size(); j++)
 			{
 				if (isColliding(bullets[i], enemies[j])) {
@@ -88,7 +99,7 @@ void BulletManager::update(vector<Enemy*> enemies) //Change parameter to array o
 					sm->increaseScore(10);
 					enemies[j]->takeDamage(10);
 				}
-			}
+			}*/
 
 			if (bullets[i]->distance > MAX_DIST) {
 				bullets[i]->active = false;

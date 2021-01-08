@@ -11,12 +11,8 @@
 
 class Enemy {
 public:
-	Enemy(SDL_Renderer* renderer, Player* player, int level) : renderer(renderer), player(player) 
-	{
-		maxHealth = (level * 10) + 40;
-		damage = (level * 3 + 6);
-	}
-	void init(SDL_Rect);
+	Enemy(SDL_Renderer* renderer, Player* player) : renderer(renderer), player(player) {}
+	void init();
 	void update();
 	void draw();
 	void clear();
@@ -28,6 +24,30 @@ public:
 
 	int getHealth() {
 		return health;
+	}
+
+	bool getActive() {
+		return active;
+	}
+
+	void setAvtive(SDL_Rect rect, int level) {
+		active = true;
+
+		this->position = rect;
+		this->rotation = 0;
+
+		maxHealth = (level * 10) + 40;
+		damage = (level * 3 + 6);
+
+		health = maxHealth;
+	}
+
+	void setUnactive() {
+		active = false;
+
+		position.x = -100;
+
+		healthBar->update(position.x, position.y, (static_cast<float> (health) / maxHealth));
 	}
 
 	struct Vector { float x, y; };
@@ -43,7 +63,6 @@ private:
 
 public:
 	SDL_Rect hitbox;
-
 private:
 	SDL_Renderer* renderer;
 	SDL_Texture* texture;
@@ -66,4 +85,6 @@ private:
 
 	bool anim = true;
 	unsigned int lastAnimFrame = 0;
+
+	bool active = false; 
 };

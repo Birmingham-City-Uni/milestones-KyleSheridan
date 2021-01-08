@@ -3,6 +3,7 @@
 #include <SDL_image.h>
 #include <iostream>
 #include <math.h>
+#include <algorithm>
 
 #include "Player.h"
 #include "BulletManager.h"
@@ -71,4 +72,6 @@ private:
 	};
 
 	Tile map[MAP_SIZE_Y][MAP_SIZE_X];
+
+	vector<Tile*> collidableTiles;
 };

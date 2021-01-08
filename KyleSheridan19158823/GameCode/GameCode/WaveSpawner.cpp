@@ -7,11 +7,19 @@ void WaveSpawner::init()
 	waveString = "Wave: 0";
 
 	enemiesRemaining = 0;
+
+	enemies.reserve(POOL_SIZE);
+	for (int i = 0; i < POOL_SIZE; i++) {
+		Enemy* enemy = new Enemy(renderer, player);
+		enemy->init();
+
+		enemies.push_back(enemy);
+	}
 }
 
 void WaveSpawner::update()
 {
-	if (enemies.size() == 0 && enemiesRemaining == 0) {
+	if (enemyCount == 0 && enemiesRemaining == 0) {
 		newWave();
 	}
 
@@ -19,23 +27,31 @@ void WaveSpawner::update()
 		int point = rand() % spawnPoints.size();
 
 		enemiesRemaining--;
-		Enemy* enemy = new Enemy(renderer, player, (rand() % waveNumber) + 1);
-		enemy->init(spawnPoints[point]);
-		enemies.push_back(enemy);
 
-		lastSpawnTime = SDL_GetTicks();
+		for (Enemy*& enemy : enemies) {
+			if (!enemy->getActive()) {
+				enemy->setAvtive(spawnPoints[point], (rand() % waveNumber) + 1);
+
+				lastSpawnTime = SDL_GetTicks();
+				
+				return;
+			}
+		}
+
+		
 	}
 
 	waveString = "Wave: " + std::to_string(waveNumber);
 
 	for (Enemy*& enemy : enemies) {
-		enemy->update();
+		if (enemy->getActive()) {
+			enemy->update();
 
-		if (enemy->getHealth() <= 0) {
-			enemy->clear();
-			delete enemy;
-			enemies.erase(enemies.begin() + (&enemy - &*(enemies.begin())));
-			return;
+			if (enemy->getHealth() <= 0) {
+				enemy->setUnactive();
+
+				enemyCount--;
+			}
 		}
 	}
 }
@@ -43,7 +59,9 @@ void WaveSpawner::update()
 void WaveSpawner::draw()
 {
 	for (Enemy*& enemy : enemies) {
-		enemy->draw();
+		if (enemy->getActive()) {
+			enemy->draw();
+		}
 	}
 
 	waveText->draw(waveString.c_str(), Text::alignX::LEFT, Text::alignY::TOP);
